@@ -14,3 +14,9 @@ How a program could model a bag of marbles
   - What does the program do when the incorrect variable is entered for color, pattern, size, and menu choice
   - What if you search for a marble that doesn't exist
   - What if you put a marble in with identical components to a marble that already exists
+
+
+POST PROGRAM COMPLETION
+1. Unfortunately I was unable to get the program to work properly, using my initial plan. I wanted to create a struct for the marble bag that would store newly
+created marbles. However, I was unable to find a way to effectively dynamically create a class object and insert it into the struct. I'm certain there is an easier way
+of doing this, I just wanted to utilize classes and structs to refamiliarize myself with them.

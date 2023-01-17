@@ -1,0 +1,16 @@
+How a program could model a bag of marbles
+1. Define a marble/Create Marble class
+  - Color
+  - Pattern
+  - Size
+  
+2. Store the marbles in a bag
+  - Store/list them using a dictionary so they can be called 
+  - Allow dynamic allocation 
+  - Allow user to put new marbles into the bag
+    - "menu" loop that allows user to choose if they want to create/store a new marble, search for a marble in the bag, or quit
+
+3. TESTS
+  - What does the program do when the incorrect variable is entered for color, pattern, size, and menu choice
+  - What if you search for a marble that doesn't exist
+  - What if you put a marble in with identical components to a marble that already exists

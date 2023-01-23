@@ -1,0 +1,30 @@
+Linked List and Queue Design:
+- Node struct called Inventory
+  - Three variables, int ID; string Name; and Inventory *next;
+
+- initialized before main is struct Inventory* front = NULL; struct Inventory* rear = NULL; and struct Inventory* temp;
+- Then the Insert, Delete, and Print function will be declared void Insert(); void Delete(); and void Print();
+- Use dynamically allocated pointers for the setup within the functions to initalize the *newInventory variable;
+- Use struct traversal with newInventory->next to set/find position.
+
+- int main() will be created 
+  - int choice; variable
+  - printed menu offering four options including quit
+  - cin >> choice;
+  - switch case based on choice 
+  - case 1: Insert();
+  - case 2: Delete();
+  - case 3: Print();
+  - default: cout << "Invalid choice" << endl;
+
+Functions needed for a linked list that can insert and delete from anywhere
+- Same initial setup as before 
+- Insert function will now get input from user to insert at front, middle, or end
+  - Prompt user for input for front middle or end
+  - switch case to set which one based on user input
+- Delete function will now get input from user to delete at the front, middle, or end 
+  - Prompt user for choice input 
+  - switch case to set which one based on user input
+
+- use linked list traversal methods to cylce through when deleting at a point in the middle (middle doesn't necessarily mean
+the exact middle of the list but just any position that is not the front or end)

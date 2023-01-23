@@ -78,7 +78,7 @@ marbleBag* add2bag(marbleBag *head, Marble newMarble){
     marbleBag *newBag = (marbleBag*) malloc(sizeof(marbleBag));
     if (!newBag) return NULL;
 
-    // Adds item to the front of the Inventory and moves to next node
+    // Adds item to the front of the marbleBag and moves to next node
     newBag->marble = newMarble;
     newBag->next = head;
     

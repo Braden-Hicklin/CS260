@@ -1,0 +1,2 @@
+The purpose of this assignment was to create a linked list/queue that included dequeue and enqueue methods, additionally I added an optional method that prints out 
+the entire list rather than just the front or rear. 

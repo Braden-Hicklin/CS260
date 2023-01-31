@@ -1,2 +1,13 @@
 The purpose of this assignment was to create a linked list/queue that included dequeue and enqueue methods, additionally I added an optional method that prints out 
 the entire list rather than just the front or rear. 
+
+IMPLEMENTATION ISSUES:
+I had dealt with an issue in the past when taking CS 133c where I was struggling to create certain methods that would interact with structs, I was able
+to solve this by implementing the methods into the structs themselves. Additionally I had to retweak how I went about inserting components into the queue 
+because previously I had made a method that only inserted items into the front of the queue rather than either ends, after some research and looking at old code
+I was able to find a solution.
+
+TESTS:
+I tested the code using an empty list which print out the expected text indicating that the list was empty.
+I tested inserting multiple items into the queue and printing them out, the outcome was as expected.
+I tested inserting multiple items into the queue, printing them out, deleting them, and then reprinting the queue; this led to the expected outcome.

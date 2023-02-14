@@ -7,3 +7,4 @@ predefined order, and search for elements within the list.
 The program is an adaptation of the previous assignment4 linked list. I have modified it based on some stuff we learned in class regarding linked list operations. 
 The main modifications are found in the auto_sort.cpp file that now includes a seperate Auto_Sort class that contains the functions used for the auto sorting, display, 
 position ref, and deletion operations. 
+

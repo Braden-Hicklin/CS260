@@ -4,9 +4,9 @@ The purpose of this program is to show proficiency in and explore the various au
 performed using array-based lists and/or linked-lists. This code will be able to take inputs from the user and insert them in a
 predefined order, and search for elements within the list.
 ## Code
-The program is an adaptation of the previous assignment4 linked list. I have modified it based on some stuff we learned in class regarding linked list operations. 
-The main modifications are found in the auto_sort.cpp file that now includes a seperate Auto_Sort class that contains the functions used for the auto sorting, display, 
-position ref, and deletion operations. 
+The program is an adaptation of the previous assignment4 linked list. I have modified it based on some stuff we learned in class regarding linked list operations. The
+insertion function has been removed and the addID function has been reworked to create, add, and sort the element. All functions have been cleaned up and reworked to
+improve code decompostion and readability.
 ## Assignment Satifaction
 tests.cpp contains tests that check each function found in auto_sort.cpp
 auto_sort.cpp has a linked list at line 5-8

@@ -25,14 +25,13 @@ class Auto_Sort {
         }
         
         // precise search for element
-        Node *precise_search(int i){
+        Node *precise_search(int new_id){
             if(head == NULL) return head;
             Node *current = head;
             Node *prev = head;
             // returns pointer to element whose id is equal to input 
-            // best used for exact ids (ie deleting)
             while(current){
-                if(current->id == i) return current;
+                if(current->id == new_id) return current;
                 prev = current;
                 current = current->next;
             }
@@ -46,7 +45,7 @@ class Auto_Sort {
         }
         
         // addID function modified from class exampple
-        void addID(int new_id) {
+        void add_id(int new_id) {
             if(head == nullptr) { //insert when empty?
                 Node *new_node = new Node{new_id, nullptr};
                 head = new_node;
@@ -65,31 +64,63 @@ class Auto_Sort {
         }
         
         // crude way of finding element using position
-        void getID(int i) {
-            struct Node *record = head;
-            while(i > 1) {
+        void get_pos(int new_id) {
+            Node *record = head;
+            // steps through list
+            while(new_id > 1) {
                 record = record->next;
-                i--;
+                new_id--;
             }
             cout << record->id << endl;
         }
         
-        // deleteID function using precise_search
-        void deleteID(int i) {
-            Node *ptr = precise_search(i);
+        // search for specific ID
+        void pull_id(int new_id) {
+            Node *ptr = precise_search(new_id);
             if(ptr == NULL) {
-                cout << "No list containing ID: " << i << endl;
+                cout << "No list containing ID: " << new_id << endl;
             }
+
+            // needed to find element at head
+            if(ptr == head) {
+                cout << "ID: " << new_id << " was found in the list" << endl;
+                return;
+            }
+            Node *current = head;
+            Node *prev = head;
+
+            // search for element not at head
+            while(current) {
+                if(current == ptr) {
+                    cout << "ID: " << new_id << " was found in the list" << endl;
+                    return;
+                } 
+                prev = current;
+                current = current->next;
+            }
+        }
+
+        // deleteID function using precise_search
+        void delete_id(int new_id) {
+            Node *ptr = precise_search(new_id);
+            if(ptr == NULL) {
+                cout << "No list containing ID: " << new_id << endl;
+            }
+            
+            // needed to delete first element
             if(ptr == head) {
                 head = ptr->next;
+                cout << "ID: " << new_id << " has been deleted." << endl;
                 return;
             }
             Node *current = head;
             Node *prev = head;
             
+            // delete element not found at head
             while(current) {
                 if(current == ptr) {
                     prev->next = current->next;
+                    cout << "ID: " << new_id << " has been deleted." << endl;
                     return;
                 }
                 prev = current;
@@ -97,18 +128,19 @@ class Auto_Sort {
             }
         }
         
-        void mass_addID(int i) {
+        // add multiple ids using add_id function
+        void mass_add_id(int new_num) {
             int new_id;
             
-            while(i > 0){
+            while(new_num > 0){
                 cout << "Enter ID: ";
                 cin >> new_id;
-                addID(new_id);
-                i--;
+                add_id(new_id);
+                new_num--;
             } 
         }
         
-        // basic display list function
+        // display ids
         void display() {
             Node *record = head;
             if(record == nullptr){

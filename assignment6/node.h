@@ -1,10 +1,6 @@
-#ifndef NODE_H_
-#define NODE_H_
-
+// Doubly linked list used in bst.cpp
 struct treeNode {
     int data;
     treeNode* left;
     treeNode* right;
 };
-
-#endif

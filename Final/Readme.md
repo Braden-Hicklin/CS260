@@ -24,7 +24,17 @@ adding two of the same edges -->
 adding only two components instead of three --> error
 
 shortest_path Tests:
-shortest path when there are 9 vertices --> expected output
+shortest path when there are 9 vertices --> 
+                        distance from source
+                        0       0
+                        1       4
+                        2       12
+                        3       19
+                        4       26
+                        5       16
+                        6       16
+                        7       15
+                        8       14
 shortest path when there are duplicate edges --> 
     g.add_edge(0, 1, 4);
     g.add_edge(1, 2, 8);

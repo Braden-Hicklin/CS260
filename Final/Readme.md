@@ -12,19 +12,21 @@ dijkstra.cpp uses three functions and contains two private variables. The first 
 ## dijkstra.cpp
 Graph Tests:
 inputing 9 vertices --> init 9 vertices
-inputting 0 vertices --> init 0 vertices 
-      doesn't allow the rest of the code to function, because the graph cannot be initialized
+inputting 0 vertices --> init 0 vertices but
+      eliminates the functionality of the rest of the code because the graph cannot be initialized
 
 add_edge Tests:
 adding two of the same edges -->   
+    
     g.add_edge(0, 1, 4);
     g.add_edge(1, 2, 8);
-    g.add_edge(1, 2, 4);  -->  0 - 0: 1 - 4: 2 - 8
+    g.add_edge(1, 2, 4);  -->  edges were added as expected, no error
       
 adding only two components instead of three --> error
 
 shortest_path Tests:
 shortest path when there are 9 vertices --> 
+                        
                         distance from source
                         0       0
                         1       4
@@ -35,10 +37,17 @@ shortest path when there are 9 vertices -->
                         6       16
                         7       15
                         8       14
+                        
 shortest path when there are duplicate edges --> 
-    g.add_edge(0, 1, 4);
-    g.add_edge(1, 2, 8);
-    g.add_edge(1, 2, 4);  -->  0 - 0: 1 - 4: 2 - 8
+    
+                      g.add_edge(0, 1, 4);
+                      g.add_edge(1, 2, 8);
+                      g.add_edge(1, 2, 4);  -->  
+
+                      distance from source
+                      0       0
+                      1       4
+                      2       8
 
 ## prim.cpp
 min_key Tests:
@@ -46,6 +55,7 @@ can't really test it as its only a utility function
 
 min_span_tree Tests:
 Matrix with 5 vertices (5x5) -->     
+      
       int G[V][V] = {
                     {0, 9, 75, 0, 0},
                     {9, 0, 95, 19, 42},
@@ -58,7 +68,9 @@ Matrix with 5 vertices (5x5) -->
                     3 - 2   51
                     1 - 3   19
                     3 - 4   31
+                    
 Matrix with 3 vertices (3x3) -->
+    
     int G[V][V] = {
                     {0, 9, 75},
                     {9, 0, 95}, 
@@ -69,7 +81,11 @@ Matrix with 3 vertices (3x3) -->
                     0 - 2   75
 
 ## Assignment Satisfaction
-Design --> When I think of graphs I think of towns in a video game that are seperated by roads of arbitrary distances. In said game you want to find the shortest possible distance that it would take to get from town 0 to town 5, this is where things like minimum spanning trees and shortest path algorithms can come into play because they allow things like the ingame map to help guide the player along said shortest path.
-Two Tests for each function --> There are two tests for all functions except the utility function min_key in prim.cpp mainly because I'm not sure how to test variably, considering it has a very specific job.
-Graph Implementation --> there isn't really a function that lets the user create more vertices dynamically, but in dijkstra.cpp you can update the vertices as you please in main. In dijkstra.cpp there is an add_edge function that allows the user or developer to create edges for the adjacency list. In dijkstra.cpp there is a shortest path function that uses Dijkstra's algorithm. And lastly, in prim.cpp there is a minimum spanning tree function that uses Prim's algorithm.
-Complexity analysis --> Because I used Dijkstra's algorithm the complexity should be O(Edges log(Vertices)) for time and O(Vertices), for the mst I used Prim's algorithm so the complexity should be  O(Edges log(Vertices)
+### Design --> 
+When I think of graphs I think of towns in a video game that are seperated by roads of arbitrary distances. In said game you want to find the shortest possible distance that it would take to get from town 0 to town 5, this is where things like minimum spanning trees and shortest path algorithms can come into play because they allow things like the ingame map to help guide the player along said shortest path.
+### Two Tests for each function --> 
+There are two tests for all functions except the utility function min_key in prim.cpp mainly because I'm not sure how to test variably, considering it has a very specific job.
+### Graph Implementation --> 
+there isn't really a function that lets the user create more vertices dynamically, but in dijkstra.cpp you can update the vertices as you please in main. In dijkstra.cpp there is an add_edge function that allows the user or developer to create edges for the adjacency list. In dijkstra.cpp there is a shortest path function that uses Dijkstra's algorithm. And lastly, in prim.cpp there is a minimum spanning tree function that uses Prim's algorithm.
+### Complexity analysis --> 
+Because I used Dijkstra's algorithm the complexity should be O(E logV) for time and O(V), for the mst I used Prim's algorithm so the complexity should be  O(E logV) where E represents edges and V represents vertices.

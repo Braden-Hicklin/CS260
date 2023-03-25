@@ -11,6 +11,9 @@ project. All references and resources will be listed in the Resources tab at the
 
 ## Resources
 https://www.programiz.com/dsa/prim-algorithm
+
 https://www.programiz.com/dsa/dijkstra-algorithm
+
 https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
+
 https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm

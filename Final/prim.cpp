@@ -54,7 +54,7 @@ void Graph::min_span_tree(int graph[V][V])
 
 int main() {
 
-    // set up graph
+    // set up adjacency matrix
     int G[V][V] = {
                     {0, 9, 75, 0, 0},
                     {9, 0, 95, 19, 42},

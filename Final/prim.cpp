@@ -6,7 +6,7 @@ using namespace std;
 
 class Graph {
     private:
-        int min_key(int key[], bool mstSet[]); // finds vertex with min key value on dynamic list
+        int min_key(int key[], bool mstSet[]); // finds vertex with min key value in matrix
     public:
         void min_span_tree(int graph[V][V]); // prim's algorithm
 };

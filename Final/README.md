@@ -1,3 +1,6 @@
+# NOTICE
+if this notice is present then that means the project is still incomplete
+
 # Purpose
 This project is intended to show some of the functions, features, and algorithms associated with graphs in c++. This a resubmission of the original project as the original
 used code that was not owned by me and simply adjusted a few variables and functions. All of the code in this project has been written by me and was created solely for this
@@ -6,6 +9,28 @@ project, however there will be some components that are adapted from other peopl
 ## Implementation
 
 ## Tests
+### addVertex
+add duplicate vertices
+add non duplicate vertex
+
+### addEdge
+add duplicate edge
+add non duplicate edge
+add edge with non existent vertices
+
+### edgeExists
+check for existing edge
+check for non existing edge
+
+### vertexExists
+check for existing vertex
+check for non existing vertex
+
+### shortestPath
+
+
+### minSpanTree
+
 
 ## Analysis
 

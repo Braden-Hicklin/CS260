@@ -27,22 +27,6 @@ int main() {
     g.addEdge("Work", "School", 40);
 */
 
-/* g.addEdge("Home", "Store", 4);
-    g.addEdge("Home", "Restaurant", 8);
-    g.addEdge("Store", "School", 8);
-    g.addEdge("Store", "Restaurant", 11);
-    g.addEdge("School", "Gym", 7);
-    g.addEdge("School", "Pool", 2);
-    g.addEdge("School", "Park", 4);
-    g.addEdge("Gym", "Work", 9);
-    g.addEdge("Gym", "Park", 14);
-    g.addEdge("Work", "Park", 10);
-    g.addEdge("Park", "Cafe", 2);
-    g.addEdge("Cafe", "Restaurant", 1);
-    g.addEdge("Cafe", "Pool", 6);
-    g.addEdge("Restaurant", "Pool", 7);
-*/
-
     g.addEdge("Home", "Store", 20);
     g.addEdge("Home", "School", 50);
     g.addEdge("Home", "Gym", 30);

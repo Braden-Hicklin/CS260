@@ -9,38 +9,36 @@ project, however there will be some components that are adapted from other peopl
 ## Implementation
 
 ## Tests
-### addVertex
+## addVertex
 add duplicate vertices
 add non duplicate vertex
 
-### addEdge
+## addEdge
 add duplicate edge
+
 add non duplicate edge
+
 add edge with non existent vertices
 
-### edgeExists
+## edgeExists
 check for existing edge
+
 check for non existing edge
 
-### vertexExists
+## vertexExists
 check for existing vertex
+
 check for non existing vertex
 
-### shortestPath
+## shortestPath
 
-
-### minSpanTree
-
+## minSpanTree
 
 ## Analysis
 
 ## Resources
 Joseph Jess' CS 260 Class Lectures
 
-https://www.programiz.com/dsa/prim-algorithm
+https://cplusplus.com/reference/list/list/
 
-https://www.programiz.com/dsa/dijkstra-algorithm
-
-https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
-
-https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+https://cplusplus.com/reference/vector/vector/

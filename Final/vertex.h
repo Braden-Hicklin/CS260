@@ -8,5 +8,6 @@
 using namespace std;
 
 struct Vertex {
-    string cityName;
+    string locationName;
+    int id;
 };

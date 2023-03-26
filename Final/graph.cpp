@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iterator>
 
 #include "graph.h"
 
@@ -15,17 +14,12 @@ void Graph::addVertex(string name){
         cout << "That Vertex already exists" << endl;
 
     } else {
-        vertexList.push_back(*newVertex);
+        vertexList.push_back(newVertex);
     }
 }
 
 void Graph::addEdge(string source, string destination, int weight) {
     Edge *newEdge = new Edge;
-    
-    newEdge->destination = destination;
-    newEdge->source = source;
-
-    newEdge->weight = weight;
 
     bool checkDest = vertexExists(destination);
     bool checkSrc = vertexExists(source);
@@ -37,7 +31,14 @@ void Graph::addEdge(string source, string destination, int weight) {
             cout << "That edge already exists." << endl;
 
         } else {
-            edgeList.push_back(*newEdge);
+            for(int i = 0; i < vertexList.size(); i++) {
+                if(vertexList.at(i)->cityName == source)
+                    newEdge->source = vertexList.at(i);
+                if(vertexList.at(i)->cityName == destination)
+                    newEdge->destination = vertexList.at(i);
+            }
+            newEdge->weight = weight;
+            edgeList.push_back(newEdge);
         }
     } else {
         cout << "The source vertex " << source << " and destination vertex " << destination << " do not exist." << endl;
@@ -45,33 +46,33 @@ void Graph::addEdge(string source, string destination, int weight) {
 }
 
 bool Graph::edgeExists(string source, string destination) {
-    list<Edge>::iterator it;
-    for(it = edgeList.begin(); it != edgeList.end(); ++it){
-        if(it->destination == destination) {
-            if(it->source == source)
+    for(int i = 0; i < edgeList.size(); i++) {
+        if(edgeList.at(i)->source->cityName == source) {
+            if(edgeList.at(i)->destination->cityName == destination) {
                 return true;
+            }
         }
-    } 
-    return false;
-}
-
-bool Graph::vertexExists(string name) {
-    list<Vertex>::iterator it;
-    for(it = vertexList.begin(); it != vertexList.end(); ++it) {
-        if(it->cityName == name) 
-            return true;
     }
     return false;
 }
 
+bool Graph::vertexExists(string name) {
+    for(int i = 0; i < vertexList.size(); i++) {
+        if(vertexList.at(i)->cityName == name) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void Graph::print() {
-    list<Vertex>::iterator v;
-    list<Edge>::iterator e;
 
     cout << "Printing Vertices..." << endl;
-    for(v = vertexList.begin(); v != vertexList.end(); ++v)
-        cout << v->cityName << endl;
+    for(int v = 0; v < vertexList.size(); v++)
+        cout << vertexList.at(v)->cityName << endl;
+
     cout << "\nPrinting Edges..." << "\nSrc\tDest\tWeight" << endl;
-    for(e = edgeList.begin(); e != edgeList.end(); ++e)
-        cout << e->source << " -> " << e->destination << "\t" << e->weight << endl;
+    for(int e = 0; e < edgeList.size(); e++)
+        cout << edgeList.at(e)->source->cityName << " -> " << edgeList.at(e)->destination->cityName << "\t" << edgeList.at(e)->weight << endl;
 }

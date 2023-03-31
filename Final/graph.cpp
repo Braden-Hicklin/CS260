@@ -6,24 +6,28 @@
 using namespace std;
 
 void Graph::addVertex(string name){
-    Vertex *newVertex = new Vertex;
+    Vertex *newVertex = new Vertex; // allocates memory to new vertex
 
+    // checks if vertex exists
+    // if true, print that it already exists and moves on
+    // if false, creates new vertex
     bool checkVertex = vertexExists(name);
     if(checkVertex == true) {
         cout << "That Vertex already exists" << endl;
 
     } else {    
-        newVertex->locationName = name;
-        newVertex->id = vertexList.size();
+        newVertex->locationName = name; // new locationName
+        newVertex->id = vertexList.size(); // id unique to each based on number of vertices in vertexList vector
 
-        vertexList.push_back(newVertex);
+        vertexList.push_back(newVertex); // adds vertex to vertexList vector
+        // lets user know the code worked properly
         cout << "Vertex " << newVertex->locationName << " successfully created with the id of " << newVertex->id << endl;
     }
 }
 
 Graph::Graph(int V) {
-    this->V = V;
-    adj = new vector<pair<int, int>>[V];
+    this->V = V; // V becomes number of vertices initialized here
+    adj = new vector<pair<int, int>>[V]; // allocates memory to vector adjacency list based on number of vertices (V)
 }
 
 void Graph::addEdge(string source, string destination, int weight) {
@@ -31,23 +35,23 @@ void Graph::addEdge(string source, string destination, int weight) {
     // string success = "Edge successfully created";
     // string failure = "Unable to create Edge";
     
-    Edge *newEdge = new Edge;
+    Edge *newEdge = new Edge; // allocates memory to new edge
 
-    bool checkDest = vertexExists(destination);
-    bool checkSrc = vertexExists(source);
+    bool checkDest = vertexExists(destination); // checks if the destination vertex exists
+    bool checkSrc = vertexExists(source); // checks if the source vertex exists
 
-    bool checkEdge = edgeExists(source, destination);
+    bool checkEdge = edgeExists(source, destination); // checks if the edge between the two vertices exists
 
-    if(checkDest && checkSrc == true) {
-        if(checkEdge == true) {
-            cout << "That edge already exists." << endl;
-
-        } else {
-            for(int i = 0; i < vertexList.size(); i++) {
-                if(vertexList.at(i)->locationName == source)
-                    newEdge->source = vertexList.at(i);
-                if(vertexList.at(i)->locationName == destination)
-                    newEdge->destination = vertexList.at(i);
+    if(checkDest && checkSrc == true) { // first check vertices
+        if(checkEdge == true) { // then check edge
+            cout << "That edge already exists." << endl; // edge was invalid
+        
+        } else { // both vertices and edge check passed (true for vertices, false for edge)
+            for(int i = 0; i < vertexList.size(); i++) { // iterate through vertexList
+                if(vertexList.at(i)->locationName == source) // get source vertex
+                    newEdge->source = vertexList.at(i); // set current vertex to source
+                if(vertexList.at(i)->locationName == destination) // get destination vertex
+                    newEdge->destination = vertexList.at(i); // set current vertex to destination
             }
             newEdge->weight = weight;
             
@@ -61,7 +65,7 @@ void Graph::addEdge(string source, string destination, int weight) {
 
             cout << "Edge successfully created between " << newEdge->source->locationName << " and " << newEdge->destination->locationName << endl;
         }
-    } else {
+    } else { // vertices were invalid
         cout << "The source vertex " << source << " and destination vertex " << destination << " do not exist." << endl;
     }
 }

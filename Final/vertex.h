@@ -8,6 +8,6 @@
 using namespace std;
 
 struct Vertex {
-    string locationName;
-    int id;
+    string locationName; // name of the place representing the vertex
+    int id; // automated id that is determined by size of the list containing the vertices
 };

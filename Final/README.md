@@ -1,7 +1,5 @@
 # Purpose
-This project is intended to show some of the functions, features, and algorithms associated with graphs in c++. This a resubmission of the original project as the original
-used code that was not owned by me and simply adjusted a few variables and functions. All of the code in this project has been written by me and was created solely for this
-project, however there will be some components that are adapted from other peoples design/code (primarily code that was worked on in class). All references and resources will be listed in the Resources tab at the bottom of this readme.
+This project is intended to show some of the functions, features, and algorithms associated with graphs in c++. All references and resources will be listed in the Resources tab at the bottom of this readme.
 
 ## Implementation
 There are five files in this project, three header files, and two c++ files. The three header files serve to initialize key elements used throughout the code, edge.h initializes the edge struct that stores all the edges in the Graph, the vertex.h initializes the vertex struct that stores the vertices in the Graph, and the graph.h initializes the Graph class that contains all the functions used throughout the code (except for main). The two c++ files are graph.cpp and main.cpp. The driver file is main.cpp so I won't go into much detail on that, but graph.cpp is what stores all the code for the functions initialized in graph.h. 

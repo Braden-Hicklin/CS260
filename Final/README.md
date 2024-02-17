@@ -96,7 +96,6 @@ getIDByString should be O(v) because I just search through the vertex list
 printPath should be O(r) because I am just accessing the root list 
 
 ## Resources
-Joseph Jess' CS 260 Class Lectures
 
 https://cplusplus.com/reference/list/list/
 
